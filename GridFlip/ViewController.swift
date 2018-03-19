@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    let totalCells = 9
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -27,6 +28,15 @@ class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        print("\(indexPath.row) selected")
+        // check boundaries
+        // what rule do we have to say we reached the end of the row
+        // what rule do we have to say we are at the start of the row
+        // what rule do we have to say we are at the top of the grid
+        // what rule do we have to say we are at the bottom of the grid
+    }
 }
 
 extension ViewController: UICollectionViewDataSource {
@@ -36,7 +46,7 @@ extension ViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return totalCells
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
